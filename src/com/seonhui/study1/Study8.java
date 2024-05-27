@@ -14,25 +14,28 @@ public class Study8 {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		int tan = 3;
 		
-		
-		for(int i = 0; i<3; i++) {
+		for(int i = 0; i<tan; i++) {
 			System.out.println("1번 -> 단발");
 			System.out.println("2번 -> 점사");
 			System.out.print("모드 설정: ");
 			int mode = sc.nextInt();
+			
 			if(mode == 1) {
 				for(int j = 0; j < 30; j++) {
-					System.out.println("탕");
+					System.out.println(j+1+"번 탕");
 				}
 			} else if(mode == 2) {
 				for(int k = 0; k < 10; k++) {
-					System.out.println("탕탕탕");
+					System.out.println(k+1+"번 탕탕탕");
 				}
 			} else {
 				System.out.println("잘못 입력했습니다");
 			}
 			System.out.println();
+			
+			
 		}
 		
 		System.out.println("끝");
