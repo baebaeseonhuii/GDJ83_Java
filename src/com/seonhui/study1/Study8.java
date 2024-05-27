@@ -21,20 +21,19 @@ public class Study8 {
 			System.out.println("2번 -> 점사");
 			System.out.print("모드 설정: ");
 			int mode = sc.nextInt();
+			int num = 10;
+			String tang="탕탕탕";
 			
 			if(mode == 1) {
-				for(int j = 0; j < 30; j++) {
-					System.out.println(j+1+"번 탕");
-				}
-			} else if(mode == 2) {
-				for(int k = 0; k < 10; k++) {
-					System.out.println(k+1+"번 탕탕탕");
-				}
-			} else {
-				System.out.println("잘못 입력했습니다");
-			}
-			System.out.println();
+				num = 30;
+				tang = "탕";
+			} 
 			
+			for(int j = 0; j < num; j++) {
+				System.out.println(tang);
+			}
+			
+			System.out.println();
 			
 		}
 		
