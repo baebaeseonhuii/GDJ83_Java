@@ -17,7 +17,7 @@ public class Study4 {
 		System.out.println("Exit");
 		
 		
-		int result = num;
+		int result = num/4+num%4;
 		System.out.println();
 		System.out.println();
 		//1을 넣으면 1
@@ -26,6 +26,8 @@ public class Study4 {
 		//7 넣으면 13
 		//3 -> 3
 		//4 -> 10
+		
+		
 	}
 	
 }
