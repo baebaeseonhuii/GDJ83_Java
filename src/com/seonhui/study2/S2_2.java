@@ -13,6 +13,7 @@ public class S2_2 {
 		// 2 -> 학생 정보 출력
 		// 3 -> 프로그램 종료
 
+		int numOfStudent = 0;
 		String[] students = null;
 		int[] korScores = null;
 		int[] engScores = null;
@@ -28,7 +29,7 @@ public class S2_2 {
 			switch (typeOfNum) {
 			case 1:
 				System.out.print("학생 수를 입력하세요: ");
-				int numOfStudent = sc.nextInt();
+				numOfStudent = sc.nextInt();
 
 				studentNum = new int[numOfStudent];
 				students = new String[numOfStudent];
@@ -88,21 +89,53 @@ public class S2_2 {
 
 			case 4:
 				// 성적순으로 출력
-				for (int i = 0; i < avgs.length - 1; i++) {
-					for (int j = 0; j < avgs.length - i - 1; j++) {
-						if (avgs[j] < avgs[j + 1]) {
-							double tmp = avgs[j];
-							avgs[j] = avgs[j + 1];
-							avgs[j + 1] = tmp;
+				int[] studentNumTmp = new int[numOfStudent];
+				int[] totalsTmp = new int[numOfStudent];
+
+				for (int i = 0; i < numOfStudent; i++) {
+					studentNumTmp[i] = studentNum[i];
+					totalsTmp[i] = totals[i];
+				}
+
+				for (int i = 0; i < numOfStudent - 1; i++) {
+					for (int j = 0; j < numOfStudent - i - 1; j++) {
+						if (totalsTmp[j] < totalsTmp[j + 1]) {
+							int tmp = studentNumTmp[j];
+							studentNumTmp[j] = studentNumTmp[j + 1];
+							studentNumTmp[j + 1] = tmp;
+
+							tmp = totalsTmp[j];
+							totalsTmp[j] = totalsTmp[j + 1];
+							totalsTmp[j + 1] = tmp;
 						}
 					}
+				}
+				System.out.println();
+				System.out.println("이름\t국어\t영어\t수학\t학생번호\t총합\t평균");
+				for (int i = 0; i < numOfStudent; i++) {
+					System.out.print(students[studentNumTmp[i] - 1] + "\t");
+					System.out.print(korScores[studentNumTmp[i] - 1] + "\t");
+					System.out.print(engScores[studentNumTmp[i] - 1] + "\t");
+					System.out.print(mathScores[studentNumTmp[i] - 1] + "\t");
+					System.out.print(studentNum[studentNumTmp[i] - 1] + "\t");
+					System.out.print(totals[studentNumTmp[i] - 1] + "\t");
+					System.out.print(avgs[studentNumTmp[i] - 1] + "\n");
 
 				}
-				for (int i = 0; i < students.length; i++) {
-
-					System.out.println(students[i] + ": " + avgs[i]);
-				}
+				System.out.println();
 				break;
+
+			/*
+			 * for (int i = 0; i < avgs.length - 1; i++) { for (int j = 0; j < avgs.length -
+			 * i - 1; j++) { if (avgs[j] < avgs[j + 1]) { double tmp = avgs[j]; avgs[j] =
+			 * avgs[j + 1]; avgs[j + 1] = tmp; } }
+			 * 
+			 * }
+			 * 
+			 * for (int i = 0; i < students.length; i++) {
+			 * 
+			 * System.out.println(students[i] + ": " + avgs[i]); } break;
+			 */
 
 			default:
 				flag = false;
