@@ -46,37 +46,61 @@ public class Study9 {
 			}
 
 		}
-		
-		if(flag) {
+
+		if (flag) {
 			System.out.println("게임을 시작하겠습니다.");
 			// 시작 레벨은 1로 시작해서 15가 만랩
-			int myLevel = 1;
-			// GOLD: 0으로 시작
-			int myGold = 0;
-			String hunt = "사냥했다!";
-			int huntCount = myLevel * 3;
-			for (int i = myLevel; i <= 15; i++) {
-				if (i == 5) { // 5레벨 달성시 1000G 지급
-					System.out.println("현재 " + i + "레벨. " + i * 200 + "GOLD를 지급합니다.");
-				} else if (i == 10) { // 10레벨 달성시 2000G 지급
-					System.out.println("현재 " + i + "레벨. " + i * 200 + "GOLD를 지급합니다.");
-				} else if (i == 15) { // 15레벨 달성 시 3000G 지급
-					System.out.println("현재 " + i + "레벨. " + i * 200 + "GOLD를 지급합니다.");
+//			int myLevel = 1;
+//			// GOLD: 0으로 시작
+//			int myGold = 0;
+//			String hunt = "사냥했다!";
+//			int huntCount = myLevel * 3;
+//			for (int i = myLevel; i <= 15; i++) {
+//				if (i == 5) { // 5레벨 달성시 1000G 지급
+//					System.out.println("현재 " + i + "레벨. " + i * 200 + "GOLD를 지급합니다.");
+//				} else if (i == 10) { // 10레벨 달성시 2000G 지급
+//					System.out.println("현재 " + i + "레벨. " + i * 200 + "GOLD를 지급합니다.");
+//				} else if (i == 15) { // 15레벨 달성 시 3000G 지급
+//					System.out.println("현재 " + i + "레벨. " + i * 200 + "GOLD를 지급합니다.");
+//				}
+//
+//				if (i == 15) {
+//					System.out.println("만랩입니다. 게임을 종료합니다.");
+//					break;
+//				} else {
+//					System.out.println("현재 레벨: " + i);
+//					huntCount = i * 3;
+//					// 레벨업을 위해 myLevel * 3 마리를 사냥하세요
+//					System.out.println("레벨업을 위해 " + huntCount + "을 눌러 " + huntCount + "마리를 사냥하세요.");
+//					int count = sc.nextInt();
+//					System.out.println(hunt.repeat(count));
+//					System.out.println("------------------레벨업 하셨습니다------------------");
+//				}
+//			}
+
+			// 선생님 코드
+			int level = 1;
+			int mon = 3;
+			int gold = 0;
+			for (level = 1; level < 15; level++) {
+				System.out.println("1. 사냥 | 2. 종료");
+				int select = sc.nextInt();
+				if (select != 1) {
+					break;
 				}
 
-				if (i == 15) {
-					System.out.println("만랩입니다. 게임을 종료합니다.");
-					break;
-				} else {
-					System.out.println("현재 레벨: " + i);
-					huntCount = i * 3;
-					// 레벨업을 위해 myLevel * 3 마리를 사냥하세요
-					System.out.println("레벨업을 위해 " + huntCount + "을 눌러 " + huntCount + "마리를 사냥하세요.");
-					int count = sc.nextInt();
-					System.out.println(hunt.repeat(count));
-					System.out.println("------------------레벨업 하셨습니다------------------");
+				if (level % 5 == 0) {
+					gold = gold + level / 5 * 1000;
+					System.out.println(level + "레벨, 축하금: " + level / 5 * 1000 + "GOLD 지급");
+				}
+
+				System.out.println("현재 레벨: " + level);
+				for (int j = 0; j < level * mon; j++) {
+					System.out.println(j + 1 + "번째 사냥");
 				}
 			}
+			gold = gold + 3000;
+			System.out.println("최종 레벨: " + level + " | 소유 골드: " + gold);
 		}
 	}
 }
