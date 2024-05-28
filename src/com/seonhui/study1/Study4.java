@@ -8,7 +8,7 @@ public class Study4 {
 		//한번만 작성
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Input Number:"); //bigger than 0
+		System.out.print("Input Number: "); //bigger than 0
 		
 		int num = sc.nextInt();
 		
@@ -22,7 +22,7 @@ public class Study4 {
 		System.out.println();
 		//1을 넣으면 1
 		//2 -> 2
-		//5를 넣으면 11
+		//5를 넣으면 11 하이야~
 		//7 넣으면 13
 		//3 -> 3
 		//4 -> 10
