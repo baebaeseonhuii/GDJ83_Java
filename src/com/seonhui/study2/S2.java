@@ -43,6 +43,7 @@ public class S2 {
 		System.out.println(ar[0]);
 		System.out.println(ar[1]);
 		System.out.println(ar[2]);
+		System.out.println("안녕");
 
 	}
 }
