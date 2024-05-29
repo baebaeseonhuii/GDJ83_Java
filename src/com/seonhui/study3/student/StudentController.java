@@ -8,17 +8,24 @@ public class StudentController {
 		// S2-2 중 1. 학생 정보 입력, 2. 학생 정보 출력, 3. 학생 번호 검색, 4. 종료:
 		Scanner sc = new Scanner(System.in);
 		boolean flag = true;
+		StudentService service = new StudentService();
+		Student[] students = null;
 
 		while (flag) {
 			System.out.print("1. 학생 정보 입력, 2. 학생 정보 출력, 3. 학생 번호 검색, 4. 종료: ");
 			int select = sc.nextInt();
 			if (select == 1) {
 				System.out.println("1번");
-				StudentService ss = new StudentService();
-				ss.makeStudent();
+				students = service.makeStudent();
 
 			} else if (select == 2) {
 				System.out.println("학생 정보 출력");
+				for (int i = 0; i < students.length; i++) {
+					Student s = students[i];
+					System.out.println(s.name);
+					System.out.println(students[i].name);
+				}
+
 			} else if (select == 3) {
 				System.out.println("학생 번호 검색");
 			} else if (select == 4) {

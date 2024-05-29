@@ -3,6 +3,9 @@ package com.seonhui.study3;
 public class ObjectStudy1 {
 
 	public static void main(String[] args) {
+		StudyReturn sr = new StudyReturn();
+		int result = sr.t1();
+
 //		// 학생 개체 생성
 //		Student s = new Student();
 //		s.num = 2;
