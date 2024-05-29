@@ -30,8 +30,8 @@ public class StudentService {
 			s.math = sc.nextInt();
 			s.total = s.kor + s.eng + s.math;
 			s.avg = s.total / 3.0;
+			students[i] = s; // students는 Student 배열[] 타입, student[i]는 Student 타입이라서 s가 student[i]에 대입 가능
 
-			// students[i]=s;
 		}
 
 		return students;
