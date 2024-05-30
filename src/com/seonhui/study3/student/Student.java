@@ -3,6 +3,9 @@ package com.seonhui.study3.student;
 public class Student {
 	// 아래는 클래스를 구성하는 멤버변수 = instance variable
 	// 클래스 안에는 변수&메서드만 있어야 함
+
+	// 접근 지정자 class 클래스명
+
 	int num; // 인스턴스 변수
 	String name;
 	int kor;
