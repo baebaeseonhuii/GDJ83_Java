@@ -24,7 +24,13 @@ public class StudentController {
 				studentView.view(students);
 
 			} else if (select == 3) {
-				System.out.println("학생 번호 검색");
+				System.out.println("학생 번호 검색: ");
+				// 학생 번호 입력받아서 일치하는지 확인
+				// 찾은 학생 정보 출력 2번 처럼
+				System.out.println("학생 번호 검색: ");
+				int searchNum = sc.nextInt();
+				service.findByNum(students[searchNum]);
+
 			} else if (select == 4) {
 				System.out.println("종료");
 				break;

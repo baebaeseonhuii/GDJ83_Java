@@ -3,17 +3,18 @@ package com.seonhui.study3.student;
 import java.util.Scanner;
 
 public class StudentService {
+	Scanner sc = new Scanner(System.in);
+
 	public Student[] makeStudent() { // 메서드의 리턴타입은 클래스이름이 될수도있음
 		// 학생 수 만큼 정수 배열을 만들어서 리턴
-		Scanner sc = new Scanner(System.in);
+		int count = sc.nextInt();
+		Student[] students = new Student[count];
 		// 같은 데이터 타입을 묶는 것
 		System.out.print("학생수를 입력하세요: ");
-		int count = sc.nextInt();
 
 		// 학생들을 모을 배열을 리턴
 		// Student -> 데이터 타입
 		// 배열
-		Student[] students = new Student[count];
 
 		for (int i = 0; i < count; i++) {
 			// students[i] = new Student(); //student 객체(객체의 주소)를 i번 만들기
@@ -36,5 +37,24 @@ public class StudentService {
 
 		return students;
 
+	}
+
+	public Student findByNum(Student[] students) {
+		// 일치하는 학생의 객체를 리턴
+		// 학생 객체를 찾기만 하는 용도
+		// Student[] students = new Student [1];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("학생 번호 검색: ");
+		int n = sc.nextInt();
+		Student student = null;
+
+		for (int i = 0; i < students.length; i++) {
+			if (n == students[i].num) {
+				student = students[i];
+				// return student;
+				break;
+			}
+		}
+		return student;
 	}
 }
