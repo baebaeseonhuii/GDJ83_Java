@@ -12,12 +12,16 @@ public class Ex3Main {
 		car2.color = "Black";
 		car2.brand = "A7";
 		car.company = "Audi";
+//
+//		System.out.println(car);
+//		car.info(car);
+//
+//		System.out.println(car);
+//		car2.info(car2);
 
-		System.out.println(car);
-		car.info(car);
+		Cal cal = new Cal();
+		cal.hap(10, 20);
 
-		System.out.println(car2);
-		car2.info(car2);
 	}
 
 }
