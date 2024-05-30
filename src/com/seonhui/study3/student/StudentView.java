@@ -22,4 +22,17 @@ public class StudentView {
 		}
 
 	}
+
+	public void view2(Student student) {
+		System.out.println(student.num);
+		System.out.println(student.name);
+		System.out.println(student.kor);
+		System.out.println(student.math);
+		System.out.println(student.eng);
+		System.out.println(student.avg);
+	}
+
+	public void view3(String str) {
+		System.out.println(str);
+	}
 }

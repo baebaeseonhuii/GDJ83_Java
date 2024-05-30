@@ -21,15 +21,24 @@ public class StudentController {
 
 			} else if (select == 2) {
 				System.out.println("2번");
-				studentView.view(students);
+				if (students != null) {
+					studentView.view(students);
+
+				} else {
+					studentView.view3("학생정보를 입력하세요");
+				}
 
 			} else if (select == 3) {
 				System.out.println("학생 번호 검색: ");
 				// 학생 번호 입력받아서 일치하는지 확인
 				// 찾은 학생 정보 출력 2번 처럼
-				System.out.println("학생 번호 검색: ");
-				int searchNum = sc.nextInt();
-				service.findByNum(students[searchNum]);
+
+				Student student = service.findByNum(students);
+				if (student != null) {
+					studentView.view2(student);
+				} else {
+					studentView.view3("검색결과가 없습니다.");
+				}
 
 			} else if (select == 4) {
 				System.out.println("종료");
