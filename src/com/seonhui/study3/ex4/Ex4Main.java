@@ -4,6 +4,7 @@ public class Ex4Main {
 
 	public static void main(String[] args) {
 		// new 생성자 호출
+
 		Car car = new Car(); // Car() -> 생성자
 		car.info();
 		System.out.println("==============");
@@ -12,6 +13,8 @@ public class Ex4Main {
 		System.out.println("==============");
 		Car car3 = new Car(300, "Yellow", "K7");
 		car3.info();
+		System.out.println("==============");
+		Bike bike = new Bike("", 0);
 
 	}
 }

@@ -17,11 +17,14 @@ public class Car {// this는 Car 클래스 객체의 주소임
 
 	public Car() { // Constructor &메서드임
 		// 매개변수가 없는 생성자 -> 기본 생성자
-		System.out.println("자동차가 만들어집니다.");
-		this.color = "Black";
-		this.brand = "k3";
-		this.company = "Kia";
-		this.price = 25000000; // 3번 -> 이걸로 출력
+//		System.out.println("자동차가 만들어집니다.");
+//		this.color = "Black";
+//		this.brand = "k3";
+//		this.company = "Kia";
+//		this.price = 25000000; // 3번 -> 이걸로 출력
+		// this() 자기 자신의 또 다른 생성자를 호출
+		// this() 생성자 내에서 제일 첫 줄에 위치해야됨
+		this(2500);
 
 	}
 
@@ -33,18 +36,26 @@ public class Car {// this는 Car 클래스 객체의 주소임
 	// 지역변수
 	public Car(int price) { // 생성자 오버로딩
 		// 힙에 저장
-		this.price = price;
+//		this.price = price;
+//		this.color = "Black";
+//		this.brand = "k3";
+//		this.company = "Kia";
+		this(price, "Black");
 	}
 
 	public Car(int price, String color) {
-		this.price = price;
-		this.color = color;
+//		this.price = price;
+//		this.color = color;
+//		this.brand = "k3";
+//		this.company = "Kia";
+		this(price, color, "k3");
 	}
 
 	public Car(int price, String color, String brand) {
 		this.price = price;
 		this.color = color;
 		this.brand = brand;
+		this.company = "Kia";
 	}
 
 	public void info() {
