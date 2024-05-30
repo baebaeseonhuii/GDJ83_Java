@@ -6,6 +6,23 @@ public class ObjectStudy1 {
 		StudyReturn sr = new StudyReturn();
 		int result = sr.t1();
 
+		int sal = 5000000;
+		sr.t4(sal);
+		System.out.println(sal);
+		Test test = new Test();
+		test.level = 1;
+		Test test2 = sr.t5(test);
+		System.out.println(test.level);
+		System.out.println(test2.level);
+		sr.t5(test);
+
+		System.out.println("========================");
+		test.level = 1;
+		sr.t5(test);
+		System.out.println("========================");
+		sr.t5(test);
+		sr.t5(test);
+
 //		// 학생 개체 생성
 //		Student s = new Student();
 //		s.num = 2;
