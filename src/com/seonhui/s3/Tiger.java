@@ -1,6 +1,9 @@
 package com.seonhui.s3;
 
 public class Tiger extends Animal {
+
+	int power;
+
 	// method overloading
 	// method overriding : 상속받은 메서드를 재정의하는 것
 	// 메서드의 선언부(헤더)는 동일하게
