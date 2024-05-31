@@ -1,13 +1,19 @@
 package com.seonhui.s1;
 
-import com.seonhui.s2.MidStudent;
-
 public class S1Main {
 
 	public static void main(String[] args) {
-		MidStudent ms = new MidStudent();
+		Object obj = new Object();
+		Test test = new Test();
+		String str = test.toString();
+		System.out.println(str);
+		System.out.println(test);
 
-		ms.info();
+		System.out.println(String.CASE_INSENSITIVE_ORDER);
+
+		String n = new String("winter");
+		String name = "winter";
+		System.out.println(name.toString());
 	}
 
 }
