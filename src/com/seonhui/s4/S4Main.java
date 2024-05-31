@@ -25,6 +25,7 @@ public class S4Main {
 		customer.don = 1000;
 		customer.point = 0;
 
+		customer.buy(computer);
 	}
 
 }

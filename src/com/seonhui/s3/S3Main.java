@@ -32,6 +32,12 @@ public class S3Main {
 		// 부모는 부모것만 알고 자식은 자식 것+ 부모 것 까지 알고 있음
 		// 부모는 자식에 접근하려면 자식으로 타입을 바꿔서 접근해야됨
 
+		Eagle eagle = new Eagle();
+		Airplane airPlane = new Airplane();
+
+		Fly fly = eagle;
+		fly = airPlane;
+
 	}
 
 }
