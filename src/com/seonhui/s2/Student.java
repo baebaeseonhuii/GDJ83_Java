@@ -10,6 +10,18 @@ public class Student {
 	private int total;
 	private double avg;
 
+	public Student() {
+
+	}
+
+	public Student(int num) {
+		this.num = num;
+	}
+
+	public void info() {
+		System.out.println(this.num);
+	}
+
 	public int getNum() {
 		return num;
 	}
