@@ -100,17 +100,38 @@ public class WeatherService {
 			arr[i] = ar[i];
 		}
 		arr[ar.length] = d;
-
-//		String test = d.getCity() + "-" + d.getGion() + "-" + d.getStatus() + "-" + d.getHumidity();
-//		System.out.println(test);
-//		this.sb.append(test);
-
 		return arr;
-//		this.getWeathers(weatherInfo);
-//		this.sb.append(weatherInfo);
+//		
 		// 클래스변수 클래스메서드 -> 객체없이 사용 가능
 		// 클래스명.변수명
 		// 클래스명.메서드명
+
+	}
+
+	// removeWeather
+	// 기존 WeatherDTOs 배열에서 한칸 삭제
+	// 도시명 입력받아서 해당 도시명 날씨 정보 삭제
+	// continue 활용
+	// 해당 도시명이면 continue로 건너뛰기
+	public WeatherDTO[] removeWeather(WeatherDTO[] dtos) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("삭제할 도시: ");
+		String cityName = sc.next();
+
+		WeatherDTO[] arr = new WeatherDTO[dtos.length - 1];
+		int flag = 0;
+		for (int i = 0; i < dtos.length; i++) {
+			if (cityName.equals(dtos[i].getCity())) {
+				flag++;
+				continue;
+			}
+			arr[i - flag] = dtos[i];
+
+		}
+		System.out.println(cityName + "의 날씨 정보가 지워졌습니다.");
+		System.out.println();
+
+		return arr;
 
 	}
 

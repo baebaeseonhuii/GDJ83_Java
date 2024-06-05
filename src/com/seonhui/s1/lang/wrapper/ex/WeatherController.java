@@ -25,7 +25,7 @@ public class WeatherController {
 	public void start() {
 		boolean flag = true;
 		while (flag) {
-			System.out.println("1. 날씨 전체 정보 출력 | 2. 날씨 정보 검색 | 3. 날씨 정보 추가 | 4. 종료");
+			System.out.println("1. 날씨 전체 정보 출력 | 2. 날씨 정보 검색 | 3. 날씨 정보 추가 | 4. 날씨 정보 삭제 | 5. 종료");
 			int select = sc.nextInt();
 			if (select == 1) {
 				this.weatherView.view(dtos);
@@ -43,6 +43,10 @@ public class WeatherController {
 			} else if (select == 3) {
 				dtos = weatherService.addWeather(dtos);
 			} else if (select == 4) {
+				// 이름으로 검색해서 같은 이름이 있는 것 삭제
+				dtos = weatherService.removeWeather(dtos);
+
+			} else if (select == 5) {
 				flag = false;
 
 			} else {
