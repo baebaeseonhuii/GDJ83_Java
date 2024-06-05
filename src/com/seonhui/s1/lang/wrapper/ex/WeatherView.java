@@ -15,4 +15,16 @@ public class WeatherView {
 		}
 
 	}
+
+	public void view(WeatherDTO dto) {
+		if (dto != null) {
+			System.out.print(dto.getCity() + " ");
+			System.out.print(dto.getGion() + " ");
+			System.out.print(dto.getStatus() + " ");
+			System.out.print(dto.getHumidity() + " ");
+			System.out.println();
+		} else {
+			System.out.println("검색 정보가 없다");
+		}
+	}
 }

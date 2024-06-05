@@ -1,5 +1,7 @@
 package com.seonhui.s1.lang.wrapper.ex;
 
+import java.util.Scanner;
+
 public class WeatherService {
 
 	// Controller Layer
@@ -31,6 +33,7 @@ public class WeatherService {
 	}
 
 	private WeatherDTO[] getWeathers(String info) {
+
 		String[] infos = info.split("-");
 		for (int i = 0; i < infos.length; i++) {
 			infos[i] = infos[i].trim(); // 문자열의 앞뒤 공백만 없애줌
@@ -58,15 +61,56 @@ public class WeatherService {
 
 		return arr;
 
-		// index%4를 어디에 쓰지?
-		// Los Angenles도 공백을 빼면 안되니까 replace" ", "" 안됨
+	}
 
-		// weatherDTO를 배열에 넣기
-		// infos의 배열에서 4개씩 한묶음
-//		weatherDTO.setCity(infos[0]);
-//		weatherDTO.setGion(Double.parseDouble(infos[1]));
-//		weatherDTO.setStatus(infos[2]);
-//		weatherDTO.setHumidity(Integer.parseInt(infos[3]));
+	// 날씨정보를 도시명으로 검색 -> 해당 날씨 return
+	// findByCity()
+	public WeatherDTO findByCity(WeatherDTO[] dtos) {
+		Scanner sc = new Scanner(System.in);
+		String cityName = sc.next();
+		WeatherDTO dto = null;
+		for (int i = 0; i < dtos.length; i++) {
+			// dto = new WeatherDTO();
+			if (cityName.equals(dtos[i].getCity())) {
+				dto = dtos[i];
+				break;
+			}
+		}
+		return dto;
+	}
+
+	// 날씨정보 추가
+	// addWeather
+	// 도시명, 기온, 상태, 습도
+
+	public WeatherDTO[] addWeather(WeatherDTO[] ar) {
+		Scanner sc = new Scanner(System.in);
+		WeatherDTO d = new WeatherDTO();
+		System.out.print("도시: ");
+		d.setCity(sc.next());
+		System.out.print("기온: ");
+		d.setGion(sc.nextDouble());
+		System.out.print("상태: ");
+		d.setStatus(sc.next());
+		System.out.print("습도: ");
+		d.setHumidity(sc.nextInt());
+
+		WeatherDTO[] arr = new WeatherDTO[ar.length + 1];
+		for (int i = 0; i < ar.length; i++) {
+			arr[i] = ar[i];
+		}
+		arr[ar.length] = d;
+
+//		String test = d.getCity() + "-" + d.getGion() + "-" + d.getStatus() + "-" + d.getHumidity();
+//		System.out.println(test);
+//		this.sb.append(test);
+
+		return arr;
+//		this.getWeathers(weatherInfo);
+//		this.sb.append(weatherInfo);
+		// 클래스변수 클래스메서드 -> 객체없이 사용 가능
+		// 클래스명.변수명
+		// 클래스명.메서드명
 
 	}
 
