@@ -1,6 +1,7 @@
 package com.seonhui.s1.lang.wrapper.ex;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class WeatherService {
 
@@ -26,9 +27,38 @@ public class WeatherService {
 
 		info = info.replace(",", "-");
 
-		WeatherDTO[] arr = this.getWeathers(info);
+		WeatherDTO[] arr = this.useTokenizer(info);
 
 		return arr;
+
+	}
+
+	private WeatherDTO[] useTokenizer(String info) {
+		// 도시 기온 상태 습도
+		StringTokenizer st = new StringTokenizer(info, "-");
+		WeatherDTO[] dtos = new WeatherDTO[st.countTokens() / 4];
+		String city = "";
+		double gion = 0;
+		String status = "";
+		int humidity = 0;
+		int count = 0;
+		while (st.hasMoreTokens()) {
+			city = st.nextToken().trim();
+			gion = Double.parseDouble(st.nextToken().trim());
+			status = st.nextToken().trim();
+			humidity = Integer.parseInt(st.nextToken().trim());
+
+			dtos[count] = new WeatherDTO();
+			dtos[count].setCity(city);
+			dtos[count].setGion(gion);
+			dtos[count].setStatus(status);
+			dtos[count].setHumidity(humidity);
+
+			count++;
+
+		}
+
+		return dtos;
 
 	}
 
@@ -119,12 +149,14 @@ public class WeatherService {
 		String cityName = sc.next();
 
 		WeatherDTO[] arr = new WeatherDTO[dtos.length - 1];
+
 		int flag = 0;
 		for (int i = 0; i < dtos.length; i++) {
 			if (cityName.equals(dtos[i].getCity())) {
 				flag++;
 				continue;
 			}
+
 			arr[i - flag] = dtos[i];
 
 		}
@@ -132,6 +164,8 @@ public class WeatherService {
 		System.out.println();
 
 		return arr;
+
+		// delim as a parameter -> split starting delim
 
 	}
 
