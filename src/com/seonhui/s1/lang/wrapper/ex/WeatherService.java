@@ -1,5 +1,6 @@
 package com.seonhui.s1.lang.wrapper.ex;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -21,44 +22,43 @@ public class WeatherService {
 		this.sb.append("-울산  , 22.4 - 비 - 80");
 	}
 
-	public WeatherDTO[] init() {
+	public ArrayList init() {
 		// sb에 있는 것을 문자열 변수에 담아서 출력
 		String info = sb.toString();
 
 		info = info.replace(",", "-");
 
-		WeatherDTO[] arr = this.useTokenizer(info);
+		ArrayList arr = this.useTokenizer(info);
 
 		return arr;
 
 	}
 
-	private WeatherDTO[] useTokenizer(String info) {
+	private ArrayList useTokenizer(String info) {
 		// 도시 기온 상태 습도
 		StringTokenizer st = new StringTokenizer(info, "-");
 		WeatherDTO[] dtos = new WeatherDTO[st.countTokens() / 4];
+		ArrayList<WeatherDTO> arrays = new ArrayList<WeatherDTO>();
 		String city = "";
 		double gion = 0;
 		String status = "";
 		int humidity = 0;
 		int count = 0;
 		while (st.hasMoreTokens()) {
+			WeatherDTO dto = new WeatherDTO();
 			city = st.nextToken().trim();
 			gion = Double.parseDouble(st.nextToken().trim());
 			status = st.nextToken().trim();
 			humidity = Integer.parseInt(st.nextToken().trim());
-
-			dtos[count] = new WeatherDTO();
-			dtos[count].setCity(city);
-			dtos[count].setGion(gion);
-			dtos[count].setStatus(status);
-			dtos[count].setHumidity(humidity);
-
-			count++;
+			dto.setCity(city);
+			dto.setGion(gion);
+			dto.setStatus(status);
+			dto.setHumidity(humidity);
+			arrays.add(dto);
 
 		}
 
-		return dtos;
+		return arrays;
 
 	}
 

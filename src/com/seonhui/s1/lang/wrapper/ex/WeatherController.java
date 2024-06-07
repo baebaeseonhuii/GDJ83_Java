@@ -1,5 +1,6 @@
 package com.seonhui.s1.lang.wrapper.ex;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WeatherController {
@@ -7,6 +8,7 @@ public class WeatherController {
 	// private WeatherDTO dto;
 	private WeatherService weatherService;
 	private WeatherView weatherView;
+	private ArrayList ar;
 	private Scanner sc;
 
 	// dtos와 weatherService의 초기화는 WeatherController의 생성자에서
@@ -14,7 +16,7 @@ public class WeatherController {
 	public WeatherController() {
 		this.weatherService = new WeatherService();
 		this.weatherView = new WeatherView();
-		this.dtos = this.weatherService.init();
+		this.ar = this.weatherService.init();
 		// this.dto = this.weatherService.findByCity(dtos);
 		this.sc = new Scanner(System.in);
 	}
