@@ -7,6 +7,9 @@ import java.util.Random;
 public class SetMain2 {
 
 	public static void main(String[] args) {
+		String n = "123";
+		Object obj = n;
+		System.out.println(obj instanceof String);
 
 		// lottery
 		// 1-45 : 6개
@@ -30,6 +33,7 @@ public class SetMain2 {
 		}
 
 		HashSet<Integer> hs = new HashSet<Integer>();
+		HashSet<Object> hs2 = new HashSet<Object>();// hs2 안에 String&Integer 둘다 넣고싶을 때
 		while (hs.size() != 6) {
 			hs.add(random.nextInt(45) + 1);
 		}
