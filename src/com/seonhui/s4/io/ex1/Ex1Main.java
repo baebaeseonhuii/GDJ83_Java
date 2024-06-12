@@ -7,15 +7,17 @@ public class Ex1Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ReadStudy rs = new ReadStudy();
+		MenuDTO dto = new MenuDTO();
 		ArrayList<MenuDTO> ar = new ArrayList<MenuDTO>();
 
 		try {
-			rs.read();
+			ar = (ArrayList<MenuDTO>) rs.read();
 
-			for (MenuDTO menuDTO : ar) {
-				menuDTO.getMenuName();
-				menuDTO.getPrice();
-				menuDTO.getKcal();
+			for (MenuDTO mDTO : ar) {
+				System.out.println(mDTO.getMenuName());
+				System.out.println(mDTO.getPrice());
+				System.out.println(mDTO.getKcal());
+				System.out.println("=====================");
 			}
 
 		} catch (Exception e) {

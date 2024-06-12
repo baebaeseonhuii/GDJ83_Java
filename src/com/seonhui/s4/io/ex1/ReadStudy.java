@@ -18,9 +18,6 @@ public class ReadStudy {
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
 
-		MenuDTO dto = new MenuDTO();
-
-		String result = "";
 		ArrayList<MenuDTO> ar = new ArrayList<MenuDTO>();
 		while (true) {
 			String s = br.readLine();
@@ -38,14 +35,8 @@ public class ReadStudy {
 				mDTO.setKcal(Integer.parseInt(st.nextToken().trim()));
 			}
 			ar.add(mDTO);
-//
-//			for (MenuDTO a : ar) {
-//				System.out.println(a.getMenuName());
-//				System.out.println(a.getPrice());
-//				System.out.println(a.getKcal());
-//				System.out.println();
-//			}
 		}
+
 		return ar;
 
 	}
