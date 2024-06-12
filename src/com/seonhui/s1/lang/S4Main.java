@@ -12,7 +12,7 @@ public class S4Main {
 		// puter Science -> 3번 포함
 		result = name.substring(3, 5);
 		// pu -> 3번 포함, 5번 미포함
-		// System.out.println(result);
+		System.out.println(result);
 
 		System.out.println("파일명을 입력하세요.(확장자 포함)");
 		name = sc.next(); /// abc.pdf -> pdf

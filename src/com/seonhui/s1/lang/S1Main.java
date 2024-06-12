@@ -14,7 +14,7 @@ public class S1Main {
 
 		Object obj = new Object();
 		Object obj2 = new Object();
-		String n = "winter";
+		String n = "sese";
 		String n2 = "winter";
 
 		System.out.println(obj.toString());

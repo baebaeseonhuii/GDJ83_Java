@@ -6,6 +6,7 @@ public class S5Main {
 		System.out.println(name.length());
 		name = name.strip();// 앞뒤 공백 제거, 문자열 사이의 공백은 제거X
 		System.out.println(name.length());
+		System.out.println(name);
 		name = name.replace(" ", "");
 		System.out.println(name);
 
